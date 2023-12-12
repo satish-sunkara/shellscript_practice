@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#USERNAME=$1
+
+echon "Please Enter your Username :"
+
+read -s USERNAME
+
+echo "Please Enter Paswwd :"
