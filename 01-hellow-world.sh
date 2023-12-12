@@ -1,1 +1,1 @@
-echo "elcome to Devops world"
+echo "Welcome to Devops world"
