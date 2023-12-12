@@ -2,7 +2,7 @@
 
 #USERNAME=$1
 
-echon "Please Enter your Username :"
+echo "Please Enter your Username :"
 
 read -s USERNAME
 
