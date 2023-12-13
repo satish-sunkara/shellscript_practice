@@ -37,7 +37,7 @@ for i in {1..$#}
         }
 
         VALIDATE $? $1
-
+done
 #yum list installed git
 
 #VALIDATE $? "GIT"
