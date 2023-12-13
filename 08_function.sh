@@ -37,6 +37,8 @@ VALIDATE(){
 
 yum list installed mysql &>> $LOG
 
+AVAILLABLE  Mysql
+
 
 yum install mysql -y &>>$LOG
 
