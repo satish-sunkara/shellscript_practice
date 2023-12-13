@@ -24,6 +24,6 @@ VALIDATE(){
     fi  
 }
 
-yum list installed mysql $?
+yum list installed mysql 
 
-VALIDATE $1
+VALIDATE $?
