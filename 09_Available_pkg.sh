@@ -16,7 +16,6 @@ AVAILABLE(){
 }
 
 
-
 VALIDATE(){
     if [ $1 -ne 0 ]; then
         yum install mysql -y 
@@ -26,10 +25,10 @@ VALIDATE(){
     fi  
 }
 
-yum list installed mysql 
+yum list installed $1 
 
 VALIDATE $? "mysql"
 
-yum list installed git
+#yum list installed git
 
-VALIDATE $? "GIT"
+#VALIDATE $? "GIT"
