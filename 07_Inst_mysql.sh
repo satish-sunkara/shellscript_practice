@@ -23,3 +23,4 @@ then
     echo "Git installation succssful"
 else 
     echo "Not installed git"
+fi
