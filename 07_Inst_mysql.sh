@@ -7,3 +7,5 @@ then
     echo "you are not a root user"
     exit 1
 fi
+
+yum install mysql -y
