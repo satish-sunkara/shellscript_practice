@@ -10,7 +10,7 @@ N="\e[0m"
 Y="\e[33m"
 
 if [ $USRID -ne 0 ]; then
-    echo -e " $Y WARN $R Please login as root user $N "
+    echo -e " $Y WARN:$R Please login as root user $N "
     exit 1
 fi
 
