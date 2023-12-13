@@ -19,7 +19,7 @@ AVAILABLE(){
 VALIDATE(){
     if [ $1 -ne 0 ]; then
         yum install mysql -y 
-        AVAILABLE $? "Installation of mysql"
+        AVAILABLE $? "Installation of $1"
     else
        echo "The package $2 is Already available"
     fi  
