@@ -15,3 +15,11 @@ if [ $? -eq 0 ]; then
 else
     echo "Not installed Mysql"
 fi
+
+yum install git -y
+
+if [ $? -eq 0 ]
+then
+    echo "Git installation succssful"
+else 
+    echo "Not installed git"
