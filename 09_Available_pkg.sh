@@ -25,14 +25,14 @@ AVAILABLE(){
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-        yum install $2 -y 
+        yum install $2 -y &>> $LOG
         AVAILABLE $? "Installation of $2"
     else
-       echo -e " $Y The package $2 is Already available $N"
+       echo -e "$Y The package $2 is Already available $N"
     fi  
 }
 
-yum list installed $1 
+yum list installed $1 &>> $LOG
 
 VALIDATE $? $1
 
