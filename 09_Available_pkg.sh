@@ -8,10 +8,10 @@ if [ $USRID -ne 0 ]; then
 fi
 
 AVAILABLE(){
-    if [ $1 -ne 0 ]; then
-        echo "$2 .... FAILED "
+    if [ $2 -ne 0 ]; then
+        echo "$3 .... FAILED "
     else
-        echo "$2 .... SUCCESS"
+        echo "$3 .... SUCCESS"
     fi
 }
 
