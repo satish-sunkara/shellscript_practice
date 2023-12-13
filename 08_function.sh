@@ -20,7 +20,7 @@ fi
 AVAILLABLE(){
     if [ $? -eq 0 ]
     then
-        echo -e" $R Package $1 is already installed $N"
+        echo -e " $R Package $1 is already installed $N"
         exit 1
     fi
 }
