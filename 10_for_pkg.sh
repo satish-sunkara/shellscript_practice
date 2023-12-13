@@ -35,7 +35,7 @@ for i in {1..$#}
             echo -e "$Y The package $2 is Already available $N"
             fi  
         }
-        VALIDATE $? $1
+        VALIDATE $? $i
         
 
 done
