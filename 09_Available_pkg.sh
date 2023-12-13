@@ -18,8 +18,8 @@ AVAILABLE(){
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-        yum install $1 -y 
-        AVAILABLE $? "Installation of $1"
+        yum install $2 -y 
+        AVAILABLE $? "Installation of $2"
     else
        echo "The package $2 is Already available"
     fi  
