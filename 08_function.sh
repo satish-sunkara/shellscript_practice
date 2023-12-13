@@ -1,10 +1,15 @@
 #!/bin/bash
 
 USRID=$(id -u)
+DATE=$(date +%F)
+
+LOG="/tmp/$DATE.log"
+
 
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+
 
 if [ $USRID -ne 0 ]
 then
@@ -22,10 +27,10 @@ VALIDATE(){
     fi
 }
 
-yum install mysql -y 
+yum install mysql -y &>>$LOG
 
 VALIDATE "Mysql"
 
-yum install git -y
+yum install git -y &>> $LOG
 
 VALIDATE "Git"
