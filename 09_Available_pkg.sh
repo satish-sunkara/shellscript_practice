@@ -22,7 +22,7 @@ VALIDATE(){
         yum install mysql -y 
         AVAILABLE $? "Installation of mysql"
     else
-        AVAILABLE $? "Installation of mysql"
+        AVAILABLE $1 "Installation of mysql"
     fi  
 }
 
