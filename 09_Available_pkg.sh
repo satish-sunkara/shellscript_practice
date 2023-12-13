@@ -8,10 +8,10 @@ if [ $USRID -ne 0 ]; then
 fi
 
 AVAILABLE(){
-    if [ $2 -ne 0 ]; then
-        echo "$3 .... FAILED "
+    if [ $1 -ne 0 ]; then
+        echo "$2 .... FAILED "
     else
-        echo "$3 .... SUCCESS"
+        echo "$2 .... SUCCESS"
     fi
 }
 
@@ -24,4 +24,6 @@ VALIDATE(){
     fi  
 }
 
-yum list installed mysql $? 
+yum list installed mysql $?
+
+VALIDATE $1
