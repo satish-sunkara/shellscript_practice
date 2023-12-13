@@ -22,7 +22,7 @@ VALIDATE(){
     fi
 }
 
-yum install mysql -y 
+yum install mysqll-y 
 
 VALIDATE "Mysql"
 
