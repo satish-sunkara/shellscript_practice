@@ -18,6 +18,7 @@ fi
 for i in {1..$#}
     do
         yum list installed $1 &>> $LOG
+        VALIDATE $? $1
         AVAILABLE(){
             if [ $1 -ne 0 ]; then
                 echo -e "$2 .... $R FAILED $N "
@@ -36,7 +37,8 @@ for i in {1..$#}
             fi  
         }
 
-        VALIDATE $? $1
+        
+
 done
 #yum list installed git
 
