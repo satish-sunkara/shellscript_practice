@@ -27,7 +27,7 @@ VALIDATE(){
 
 yum list installed $1 
 
-VALIDATE $? "mysql"
+VALIDATE $? $1
 
 #yum list installed git
 
