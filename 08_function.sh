@@ -2,8 +2,9 @@
 
 USRID=$(id -u)
 
-R=\e[31m 
-N=\e[0m
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 if [ $USRID -ne 0 ]
 then
@@ -17,7 +18,7 @@ VALIDATE(){
         echo "Installation $1 $R FAILED $N"
         exit 1
     else
-        echo "Installation $1 SUCCESS"
+        echo "Installation $1 $G SUCCESS $N"
     fi
 }
 
