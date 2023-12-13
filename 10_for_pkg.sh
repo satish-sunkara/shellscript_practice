@@ -17,8 +17,7 @@ fi
 
 for i in {1..$#}
     do
-        yum list installed $1 &>> $LOG
-        VALIDATE $? $1
+        yum list installed $i &>> $LOG
         AVAILABLE(){
             if [ $1 -ne 0 ]; then
                 echo -e "$2 .... $R FAILED $N "
@@ -36,7 +35,7 @@ for i in {1..$#}
             echo -e "$Y The package $2 is Already available $N"
             fi  
         }
-
+        VALIDATE $? $1
         
 
 done
