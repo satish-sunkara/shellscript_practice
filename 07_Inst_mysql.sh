@@ -14,3 +14,4 @@ if [ $? -eq 0 ]; then
     echo "Mysql Installed successfully"
 else
     echo "Not installed Mysql"
+fi
