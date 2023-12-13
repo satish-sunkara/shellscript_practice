@@ -1,17 +1,24 @@
 #!/bin/bash
 
 USRID=$(id -u)
+DATE=$(date +%F)
+LOG="/tmp/$DATE.log"
+
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+Y="\e[33m"
 
 if [ $USRID -ne 0 ]; then
-    echo "Please login as root user"
+    echo -e " $Y WARN $R Please login as root user $N "
     exit 1
 fi
 
 AVAILABLE(){
     if [ $1 -ne 0 ]; then
-        echo "$2 .... FAILED "
+        echo "$2 .... $R FAILED $N "
     else
-        echo "$2 .... SUCCESS"
+        echo "$2 .... $G SUCCESS $N "
     fi
 }
 
@@ -21,7 +28,7 @@ VALIDATE(){
         yum install $2 -y 
         AVAILABLE $? "Installation of $2"
     else
-       echo "The package $2 is Already available"
+       echo " $Y The package $2 is Already available $N"
     fi  
 }
 
