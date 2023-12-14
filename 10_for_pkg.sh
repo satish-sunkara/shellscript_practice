@@ -32,9 +32,9 @@ VALIDATE(){
     fi  
 }
 
-for i in {1..$#}; do
-    yum list installed $i &>> $LOG
-    VALIDATE $? $i
+for i in $*; do
+    yum list installed $1 &>> $LOG
+    VALIDATE $? $1
 done
 #yum list installed git
 
