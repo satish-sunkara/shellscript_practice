@@ -14,30 +14,27 @@ if [ $USRID -ne 0 ]; then
     exit 1
 fi
 
-
-for i in {1..$#}
-    do
-        yum list installed $i &>> $LOG
-        AVAILABLE(){
-            if [ $1 -ne 0 ]; then
-                echo -e "$2 .... $R FAILED $N "
-            else
-                echo -e "$2 .... $G SUCCESS $N "
-            fi
-        }
+AVAILABLE(){
+    if [ $1 -ne 0 ]; then
+        echo -e "$2 .... $R FAILED $N "
+    else
+        echo -e "$2 .... $G SUCCESS $N "
+    fi
+}
 
 
-        VALIDATE(){
-            if [ $1 -ne 0 ]; then
-                yum install $2 -y &>> $LOG
-                AVAILABLE $? "Installation of $2"
-            else
-            echo -e "$Y The package $2 is Already available $N"
-            fi  
-        }
-        VALIDATE $? $i
-        
+VALIDATE(){
+    if [ $1 -ne 0 ]; then
+        yum install $2 -y &>> $LOG
+        AVAILABLE $? "Installation of $2"
+    else
+       echo -e "$Y The package $2 is Already available $N"
+    fi  
+}
 
+for i in {1..$#}; do
+    yum list installed $i &>> $LOG
+    VALIDATE $? $1
 done
 #yum list installed git
 
