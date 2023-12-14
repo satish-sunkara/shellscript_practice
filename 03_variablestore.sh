@@ -1,5 +1,5 @@
 #!/bin/bash
 
-DATE=$(date +%F-%H-%M-%S)
+DATE=$(date +%F_-%H-%M-%S)
 
 echo "Script Executed Date is : $DATE"
