@@ -33,8 +33,8 @@ VALIDATE(){
 }
 
 for i in $*; do
-    yum list installed $1 &>> $LOG
-    VALIDATE $? $1
+    yum list installed $i &>> $LOG
+    VALIDATE $? $i
 done
 #yum list installed git
 
