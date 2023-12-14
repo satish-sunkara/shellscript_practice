@@ -34,7 +34,7 @@ VALIDATE(){
 
 for i in {1..$#}; do
     yum list installed $i &>> $LOG
-    VALIDATE $? $1
+    VALIDATE $? $i
 done
 #yum list installed git
 
