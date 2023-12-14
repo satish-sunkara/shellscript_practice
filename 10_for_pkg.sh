@@ -1,8 +1,8 @@
 #!/bin/bash
 
 USRID=$(id -u)
-DATE=$(date +%F)
-LOG="/tmp/$DATE.log"
+DATE=$(date +%F_%H:%M:%S)
+LOG="/tmp/$0-$DATE.log"
 
 R="\e[31m"
 G="\e[32m"
@@ -28,12 +28,13 @@ VALIDATE(){
         yum install $2 -y &>> $LOG
         AVAILABLE $? "Installation of $2"
     else
-       echo -e "$Y The package $2 is Already available $N"
+       echo -e " The package $2 is Already installed $Y SKIPPING $N"
     fi  
 }
 
 for i in $*; do
-    yum list installed $i &>> $LOG
+    # Validating package is installed or not
+    yum list installed $i &>> $LOG 
     VALIDATE $? $i
 done
 #yum list installed git
