@@ -10,7 +10,5 @@ echo " $TEXT "
 
 while IFS= read -r line
 do
-    for i in $line; do
-        echo "$i"
-    done
+    echo "$line"
 done <<< $TEXT
