@@ -9,7 +9,7 @@ do
     usage=$(echo $line | awk -F " " '{print $6F}' | cut -d % -f1)
     position=$(echo $line | awk -F " " '{print $1F}')
     if [ $usage -ge $TRUSHOLD_VALUE ]; then
-        message += "High disk usage on $position : $usage \n"
+        message+="High disk usage on $position : $usage\n"
     fi
 done <<< $DISK_USAGE
 
