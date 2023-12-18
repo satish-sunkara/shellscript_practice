@@ -1,15 +1,17 @@
 #!?bin/bash
 
-DISK_USAGE=$(df -Th | grep -vE 'tempfs|File' | awk -F " " '{print $6F}' | cut -d % -f1)
-POSITION=$(df -Th | grep -vE 'tempfs|File' | awk -F " " '{print $6F}')
+DISK_USAGE=$(df -Th | grep -vE 'tempfs|File')
 TRUSHOLD_VALUE=1
-MESSAGE=""
+message=""
 
-while IFS= read -r $line $line1 $line1
+while IFS= read line
 do
-    if [ $line -ge  $TRUSHOLD_VALUE]; then
-        MESSAGE+="High disk usage on $line1 : $line\n"
+    usage=$(echo $line | awk -F " " '{print $6F}' | cut -d % -f1)
+    position=$(echo $line | awk -F " " '{print $1F}')
+    if [ $usage -ge $TRUSHOLD_VALUE ]; then
+        message+="High disk usage on $position : $usage \n"
     fi
-done <<< $DISK_USAGE $POSITION 
+done <<< $DISK_USAGE
 
-echo -e "message : $MESSAGE"
+echo -e "message : $message"
+
