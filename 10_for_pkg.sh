@@ -26,7 +26,7 @@ AVAILABLE(){
 VALIDATE(){
     if [ $1 -ne 0 ]; then
         yum install $2 -y &>> $LOG
-        AVAILABLE $? "Installation of $2"
+        AVAILABLE $? " Installation of $2"
     else
        echo -e " The package $2 is Already installed $Y SKIPPING $N"
     fi  
