@@ -13,7 +13,7 @@ while IFS= read -r line
 do
     for i in $line; do
         echo "$i"
-        a=a+1
+        a=$a+1
         if [ $a -eq 2 ]; then
             exit 1
         fi
