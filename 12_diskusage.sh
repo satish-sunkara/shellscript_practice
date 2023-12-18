@@ -2,7 +2,7 @@
 
 DISK_USAGE=$(df -Th | grep -vE 'tempfs|File')
 TRUSHOLD_VALUE=1
-message=""
+message=" "
 
 while IFS= read line
 do
