@@ -13,4 +13,4 @@ do
     for i in $line; do
         echo "$i"
     done
-done < $TEXT
+done <<< $TEXT
