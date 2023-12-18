@@ -10,3 +10,10 @@ Y="\e[33m"
 if [ ! -d $LOGFILE ]; then
     echo -e " $R source directory : $LOGFILE doesn't exists $N"
 fi
+
+FILETO_DETECT=$(find $LOGFILE -type f -mtime +14 -name "*.log")
+while IFS= read -r line
+do
+    echo "Deleting files are : $line"
+
+done <<< $FILETO_DETECT
