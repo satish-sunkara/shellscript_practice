@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DISK_USAGE=$(df -Th | grep -vE 'tempfs|File')
+DISK_USAGE=$(df -Th | grep -vE 'tmpfs|File')
 TRUSHOLD_VALUE=1
 message=" "
 
