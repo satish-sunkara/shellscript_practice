@@ -1,6 +1,7 @@
 #!/bin/bash
 
 TEXT=$(cat $1)
+a=0
 
 echo " $TEXT "
 
@@ -10,5 +11,10 @@ echo " $TEXT "
 
 while IFS= read -r line
 do
-    echo "$line"
+    for i in $line; do
+        echo "$i"
+        a+=1
+        if a -eq 2; then
+            exit 1
+    done
 done <<< $TEXT
