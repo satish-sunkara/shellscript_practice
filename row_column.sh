@@ -8,9 +8,9 @@ echo " $TEXT "
 #     echo "$i"
 # done
 
-while IFS=read -r line
+while IFS= read -r line
 do
     for i in $line; do
         echo "$i"
     done
-done
+done < $TEXT
