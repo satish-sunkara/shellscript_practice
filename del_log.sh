@@ -15,6 +15,6 @@ FILETO_DETECT=$(find $LOGFILE -type f -mtime +10 -name "*.log")
 while IFS= read -r line
 do
     echo "Deleting files are : $line"
-    rm -rf $?
+    rm -rf $line
 
 done <<< $FILETO_DETECT
