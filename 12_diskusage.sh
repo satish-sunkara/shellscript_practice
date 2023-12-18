@@ -5,16 +5,11 @@ POSITION=$(df -Th | grep -vE 'tempfs|File' | awk -F " " '{print $6F}')
 TRUSHOLD_VALUE=1
 MESSAGE=""
 
-if [ $DISK_USAGE -ge $TRUSHOLD_VALUE ]; then
-       MESSAGE+="High disk usage on $$POSITION : $DISK_USAGE\n"
-fi
+while IFS= read -r $line
+do
+    if [ $line -ge $TRUSHOLD_VALUE ]; then
+        MESSAGE+="High disk usage on $$POSITION : $line\n"
+    fi
+done <<< $DISK_USAGE
+
 echo -e "message : $MESSAGE"
-
-# while IFS= read -r $line
-# do
-#     if [ $DISK_USAGE -ge $TRUSHOLD_VALUE ]; then
-#         MESSAGE+="High disk usage on $$POSITION : $DISK_USAGE\n"
-#     fi
-# done <<< $DISK_USAGE
-
-# echo -e "message : $MESSAGE"
