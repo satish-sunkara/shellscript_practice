@@ -7,7 +7,7 @@ MESSAGE=""
 
 while IFS= read -r $line
 do
-    if [ $DISK_USAGE -ge TRUSHOLD_VALUE ]; then
+    if [ $DISK_USAGE -ge $TRUSHOLD_VALUE ]; then
         MESSAGE+="High disk usage on $$POSITION : $DISK_USAGE\n"
     fi
 done <<< $DISK_USAGE
