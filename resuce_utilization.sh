@@ -8,7 +8,7 @@ while IFS= read line
 do 
         usage=$(echo $line | awk '{print $6}'|cut -d % -f1 )
         partition=$(echo $line | awk '{print $1}')
-        message+="Max reahed disks are : $partitions : $usage"
+        message+="Max reahed disks are : $partitions : $usage \n"
 done <<< $DISK_USAGE
 
-echo "message : $message"
+echo -e "message : $message"
