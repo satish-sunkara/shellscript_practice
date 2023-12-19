@@ -15,4 +15,4 @@ LOGFILE=$( find $LOGFOLDERS -type f -mtime +14 -name "*.log")
 while IFS= read -r line
 do
     echo "oLD log files are :$line"
-done <<< $LOGFOLDER
+done <<< $LOGFILE
