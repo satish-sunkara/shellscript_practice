@@ -7,7 +7,7 @@ if [ ! -d $SOURCE_FOLDER ]; then
     exit 1
 fi 
 
-FILE_DEL=$(find $SOURCE_FOLDER -type f -name "cron*")
+FILE_DEL=$(find $SOURCE_FOLDER -name "cron*")
 
 while IFS= read -r line
 do
