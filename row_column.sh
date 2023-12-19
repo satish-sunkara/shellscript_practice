@@ -9,16 +9,8 @@ echo " $TEXT "
 #     echo "$i"
 # done
 
-# while IFS= read -r line
-# do
-#     for i in $line; do
-#         echo "$i"
-#         a=$a+1
-#         if [ $a -eq 2 ]; then
-#             exit 1
-#         fi
-#     done
-# done <<< $TEXT
+while IFS= read -r line
+do
+    $line
+done <<< $TEXT
 
-RESULT= paste -sd /tmp/test.txt
-echo"$  RESULT"
