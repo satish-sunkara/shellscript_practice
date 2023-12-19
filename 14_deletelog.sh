@@ -10,7 +10,7 @@ if [ ! -d $LOGFOLDER ]; then
     echo " $R There is no directory $LOGFOLDER is prasent $N "
     exit 1
 fi
-LOGFILE=$( cd $LOGFOLDER | find $1 -type f -mtime +14 -name "*.log")
+LOGFILE=$( find $LOGFOLDERS -type f -mtime +14 -name "*.log")
 
 while IFS= read -r line
 do
