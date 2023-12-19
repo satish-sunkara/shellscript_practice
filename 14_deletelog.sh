@@ -10,7 +10,7 @@ if [ ! -d $LOGFOLDER ]; then
     echo -e " $R There is no directory $LOGFOLDER is prasent $N "
 fi
 
-LOGFILE=$(find $LOGFOLDERS -type f -mtime +10 -name "*.log")
+LOGFILE=$(find $LOGFOLDERS -type f -mtime +9 -name "*.log")
 
 while IFS= read -r line
 do
