@@ -11,5 +11,6 @@ FILE_DEL=$(find $SOURCE_FOLDER -name "cron*")
 
 while IFS= read -r line
 do
-    echo "The vailable files are : $line"
+    # echo "The vailable files are : $line"
+    rm -rf $line
 done <<< $FILE_DEL
