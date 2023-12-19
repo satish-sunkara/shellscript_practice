@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DISK_USAGE=$(dh -Th | grep -vE 'tmpfs|File')
+DISK_USAGE=$(df -Th | grep -vE 'tmpfs|File')
 THOLD=1
 message=""
 
