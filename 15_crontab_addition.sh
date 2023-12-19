@@ -1,6 +1,7 @@
 #!/bin/bash
-DIR="/tmp/testfile"
+
+# DIR="/tmp/testfile"
 
 for i in {1..10}; do
-    $(cd $DIR | mkdir cronttab_$i)
+    $(mkdir /tmp/testfile/cronttab_$i)
 done
