@@ -22,4 +22,10 @@ while getopts ":n:w:h:" opt; do
 done
 
 
+if [ -z $NAME ] || [-z $WISHES ] ; then
+    echo "-n and -w are mandatory"
+    USAGE
+    exit 1
+fi
+
 echo "Hi $NAME, Very $WISHES. I am learning shell scripting"
