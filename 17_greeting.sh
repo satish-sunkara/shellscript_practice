@@ -22,7 +22,7 @@ while getopts ":n:w:h:" opt; do
 done
 
 
-if [ -z $NAME ] || [-z $WISHES ] ; then
+if [ -z "$NAME" ] || [ -z "$WISHES" ] ; then
     echo "-n and -w are mandatory"
     USAGE
     exit 1
