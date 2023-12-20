@@ -52,7 +52,7 @@ done <<< $LOG_FILE
 
 
 if [ -z $LOGFOLDER ] || [ -z $ARCHIVE ] || [ -z $DESTIN_FOLDER ]; then
-    echo "ERROR :: -S , -a , -d are mandatory fields to Enter(default time is 14 days)"
+    echo "ERROR :: -s , -a , -d are mandatory fields to Enter(default time is 14 days)"
     USAGE
     exit 1
 fi
