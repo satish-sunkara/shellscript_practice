@@ -1,14 +1,15 @@
 #!/bin/bash
 
 NAME=""
-WISHES=""
+WISHES="Exited to see you"
 
 USAGE(){
 
     echo "USAGE:: $(basename $0) -n <name> -w <wishes>"
     echo "Options ::"
     echo "-n , Specify the name(Mandatory)"
-    echo "-w , Specify the Wishes(Mandatory)"
+    # echo "-w , Specify the Wishes(Mandatory)"
+    echo "-w , Specify the Wishes"
     echo "-h , Dispay help and exit"
 }
 
@@ -22,8 +23,10 @@ while getopts ":n:w:h:" opt; do
 done
 
 
-if [ -z "$NAME" ] || [ -z "$WISHES" ] ; then
-    echo "-n and -w are mandatory"
+# if [ -z "$NAME" ] || [ -z "$WISHES" ] ; then
+
+if [ -z "$NAME" ]; then
+    echo "-n is are mandatory and default wishes are Exited to see you "
     USAGE
     exit 1
 fi
