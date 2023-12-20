@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=""
-WISHES="Exited to see you"
+WISHES="Exited to see you"  #It is Optional
 
 USAGE(){
 
@@ -9,7 +9,7 @@ USAGE(){
     echo "Options ::"
     echo "-n , Specify the name(Mandatory)"
     # echo "-w , Specify the Wishes(Mandatory)"
-    echo "-w , Specify the Wishes"
+    echo "-w , Specify the Wishes (Optional and default is Exited to see you )"
     echo "-h , Dispay help and exit"
 }
 
