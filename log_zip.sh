@@ -5,7 +5,7 @@ NUM_DAYS="14"   #default value is 14 days
 DESTIN_FOLDER=""
 ARCHIVE=""
 TIME=""
-LOG_TIME=$(date +%F_%H-%M-%S%)
+LOG_TIME=$(date +%F_%H-%M-%S)
 
 USAGE(){
     echo "USAGE :: $(basename $0) -s <source-dir> -a <archive|delete> -d <destination> -t <day> -h <help> "
@@ -53,11 +53,11 @@ done <<< $LOG_FILE
 
 mkdir -p $DESTIN_FOLDER$LOG_TIME
 
-for i in $DESTIN_FOLDER; do
-    cp $i $DESTIN_FOLDER$LOG_TIME
-done
+# for i in $DESTIN_FOLDER; do
+    # cp $i $DESTIN_FOLDER$LOG_TIME
+# done
 
-zip $DESTIN_FOLDER$LOG_TIME.zip
+zip -r $DESTIN_FOLDER$0_$LOG_TIME.zip $DESTIN_FOLDER
 
 
 if [ -z $LOGFOLDER ] || [ -z $ARCHIVE ] || [ -z $DESTIN_FOLDER ]; then
