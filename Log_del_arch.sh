@@ -50,11 +50,11 @@ do
         rm -rf $line
     fi
 done <<< $LOG_FILE
-mkdir $DESTIN_FOLDER/$0_$LOG_TIME
+mkdir $DESTIN_FOLDER$0_$LOG_TIME
 for i in $DESTIN_FOLDER; do
-    mv i $DESTIN_FOLDER/$0_$LOG_TIME
+    mv $i $DESTIN_FOLDER/$0_$LOG_TIME
 done
-zip -d $DESTIN_FOLDER/$0_$LOG_TIME.zip
+zip -d $DESTIN_FOLDER$0_$LOG_TIME.zip
 
 
 if [ -z $LOGFOLDER ] || [ -z $ARCHIVE ] || [ -z $DESTIN_FOLDER ]; then
