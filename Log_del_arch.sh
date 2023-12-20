@@ -29,12 +29,12 @@ while getopts ":s:a:d:t:h:" opt; do
 done
 
 
-if [! -d $LOGFOLDER ]; then
+if [ ! -d $LOGFOLDER ]; then
     echo "Given Source folder $LOGFOLDER is doesn't Exists"
     exit 1
 fi
 
-if [! -d $DESTIN_FOLDER ]; then
+if [ ! -d $DESTIN_FOLDER ]; then
     echo "Given Destination folder $DESTIN_FOLDER is doesn't Exists"
     exit 1
 fi
@@ -48,6 +48,7 @@ do
         rm -rf $line
     else
         rm -rf $line
+    fi
 done <<< $LOG_FILE
 
 
