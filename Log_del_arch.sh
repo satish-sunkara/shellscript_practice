@@ -42,10 +42,10 @@ LOG_FILE=$(find $LOGFOLDER -type f -mtime +$NUM_DAYS -name "*.log")
 
 while IFS= read line
 do
-    if [ $ARCHIVE == "delete" ]; then
+    if [ $ARCHIVE == "archive" ]; then
         cp $line $DESTIN_FOLDER
         rm -rf $line
-    else
+    elif [ $ARCHIVE == "delete"]
         rm -rf $line
     fi
 done <<< $LOG_FILE
