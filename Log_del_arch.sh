@@ -45,7 +45,7 @@ do
     if [ $ARCHIVE == "archive" ]; then
         cp $line $DESTIN_FOLDER
         rm -rf $line
-    elif [ $ARCHIVE == "delete"]
+    elif [ $ARCHIVE == "delete"]; then
         rm -rf $line
     fi
 done <<< $LOG_FILE
