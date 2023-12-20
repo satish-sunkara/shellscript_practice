@@ -4,7 +4,6 @@ LOGFOLDER=""
 NUM_DAYS="14"   #default value is 14 days
 DESTIN_FOLDER=""
 ARCHIVE=""
-DELETE=""
 TIME=""
 
 USAGE(){
@@ -52,7 +51,7 @@ do
 done <<< $LOG_FILE
 
 
-if [ -z $LOGFOLDER ] || [ -z $ARCHIVE ] || [ -Z $DELETE ] || [ -z $DESTIN_FOLDER ]; then
+if [ -z $LOGFOLDER ] || [ -z $ARCHIVE ] || [ -z $DESTIN_FOLDER ]; then
     echo "ERROR :: -S , -a , -d are mandatory fields to Enter(default time is 14 days)"
     USAGE
     exit 1
