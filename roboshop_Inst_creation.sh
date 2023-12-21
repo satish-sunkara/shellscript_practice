@@ -27,8 +27,8 @@ for i in "${INSTANCE_LIST[@]}"; do
         "Action"              : "CREATE"
         ,"ResourceRecordSet"  : {
             "Name"              : "'$i'.'$DOMAIN'"
-            ,"Type"             : "CNAME"
-            ,"TTL"              : 120
+            ,"Type"             : "A"
+            ,"TTL"              : 1
             ,"ResourceRecords"  : [{
                 "Value"         : "'$IP_ADDR'"
             }]
