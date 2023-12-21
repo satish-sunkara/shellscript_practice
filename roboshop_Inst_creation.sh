@@ -26,7 +26,7 @@ for i in "${INSTANCE_LIST[@]}"; do
         ,"Changes": [{
         "Action"              : "CREATE"
         ,"ResourceRecordSet"  : {
-            "Name"              : "'$I'.'$DOMAIN'"
+            "Name"              : "'$i'.'$DOMAIN'"
             ,"Type"             : "CNAME"
             ,"TTL"              : 120
             ,"ResourceRecords"  : [{
